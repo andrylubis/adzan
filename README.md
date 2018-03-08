@@ -1,2 +1,2 @@
-# adzan-cms
-CI
+# Adzan
+Simple Login CI
