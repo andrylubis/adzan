@@ -45,7 +45,10 @@
   <div class="subnavbar-inner">
     <div class="container">
       <ul class="mainnav">
-        <li class="active"><a href="<?php echo base_url('admin');?>"><i class="icon-dashboard"></i><span>Dashboard</span> </a> </li>      
+        <?php foreach ($category as $kt) { ?>
+        <li class="active"><a href="<?php echo $kt['category_name'];?>"><i class="icon-dashboard"></i><span><?php echo $kt['category_name'];?></span> </a> </li>  
+
+        <?php } ?>    
       </ul>
     </div>
     <!-- /container --> 

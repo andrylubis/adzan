@@ -13,15 +13,13 @@
                 <div class="widget-content">
                   <h6 class="bigstats" style="margin-left:30px;">A fully responsive premium quality admin template built on Twitter Bootstrap by <a href="http://www.egrappler.com" target="_blank">EGrappler.com</a>.  These are some dummy lines to fill the area.</h6>
                   <div id="big_stats" class="cf">
-                                      
-                    <div class="stat"> <i class="icon-thumbs-up-alt"></i> <span class="value">423</span> </div>
+                    <?php
+                      foreach ($stats as $st) {
+                    ?>                  
+                    <div class="stat"> <i class="icon-thumbs-up-alt"></i> <span class="value"><?php echo $st['socmed'];?></span> </div>
                     <!-- .stat -->
-                    
-                    <div class="stat"> <i class="icon-twitter-sign"></i> <span class="value">922</span> </div>
-                    <!-- .stat -->
-                    
-                    <div class="stat"> <i class="icon-bullhorn"></i> <span class="value">25%</span> </div>
-                    <!-- .stat --> 
+                    <?php } ?>
+                
                   </div>
                 </div>
                 <!-- /widget-content --> 
@@ -40,7 +38,3 @@
   </div>
   <!-- /main-inner --> 
 </div>
-
-
-
-
