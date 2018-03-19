@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 08, 2018 at 06:26 PM
+-- Generation Time: Mar 19, 2018 at 11:53 AM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 5.6.24
 
@@ -42,22 +42,61 @@ INSERT INTO `admin` (`id`, `username`, `password`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `category`
+--
+
+CREATE TABLE `category` (
+  `id` int(11) NOT NULL,
+  `category_name` varchar(35) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `category`
+--
+
+INSERT INTO `category` (`id`, `category_name`) VALUES
+(1, 'Admin'),
+(2, 'Introduce');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `introduce`
+--
+
+CREATE TABLE `introduce` (
+  `id` int(11) NOT NULL,
+  `description` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `introduce`
+--
+
+INSERT INTO `introduce` (`id`, `description`) VALUES
+(2, 'Blessed with 5,350 authentic traditional recipes, Indonesia is the motherland of South East Asian food. Explore its stories and experience more  with Good Indonesian Food, guide you can trust for authentic Indonesian gastronomy destination.'),
+(3, 'sate'),
+(4, 'Lorem Ipsum');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `stats`
 --
 
 CREATE TABLE `stats` (
   `id` int(25) NOT NULL,
-  `fb` int(25) NOT NULL,
-  `twitter` int(25) NOT NULL,
-  `viral` int(25) NOT NULL
+  `socmed` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `stats`
 --
 
-INSERT INTO `stats` (`id`, `fb`, `twitter`, `viral`) VALUES
-(1, 423, 922, 25);
+INSERT INTO `stats` (`id`, `socmed`) VALUES
+(1, '423'),
+(2, '555'),
+(3, '417');
 
 --
 -- Indexes for dumped tables
@@ -67,6 +106,18 @@ INSERT INTO `stats` (`id`, `fb`, `twitter`, `viral`) VALUES
 -- Indexes for table `admin`
 --
 ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `category`
+--
+ALTER TABLE `category`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `introduce`
+--
+ALTER TABLE `introduce`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -85,10 +136,20 @@ ALTER TABLE `stats`
 ALTER TABLE `admin`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
+-- AUTO_INCREMENT for table `category`
+--
+ALTER TABLE `category`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `introduce`
+--
+ALTER TABLE `introduce`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
 -- AUTO_INCREMENT for table `stats`
 --
 ALTER TABLE `stats`
-  MODIFY `id` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
